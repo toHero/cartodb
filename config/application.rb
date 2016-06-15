@@ -48,6 +48,9 @@ module CartoDB
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+    config.middleware.delete Rack::Lock
+
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     ::Sequel.extension(:pagination)
